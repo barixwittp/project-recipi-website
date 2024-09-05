@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="picofme (4).png" type="image/x-icon">
+    <script src="webserver.js"></script>
+
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#navvlist {
+    list-style-type: none;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
+}
+
+.navbar {
+    width: 100%;
+    background: #B2FEFA;
+    background: -webkit-linear-gradient(to right, #0ED2F7, #B2FEFA);
+    background: linear-gradient(to right, #0ED2F7, #B2FEFA);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#navlogo {
+    font-size: 2rem;
+    color: brown;
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal; /* or any valid weight value, such as 400 */
+    font-style: normal;
+    margin-left: 10px;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+
+nav {
+    width: 100%;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+
+#navitems a {
+    text-decoration: none;
+    /* margin-right: 4px; */
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+
+#navitems a:hover {
+    transform: scale(1.1);
+}
+
+#navlogo:hover {
+    transform: scale(1.1);
+}
+
+.links {
+    display: flex;
+    gap: 40px;
+    margin-top: 2px;
+}
+
+.footer {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255,255,255,0.50) 47%, rgba(0,0,0,0.50) 100%);
+    background-blend-mode: screen;
+    padding: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.containerbox {
+    width: calc(100% - 300px); /* Adjust to leave space for sidebar */
+    max-width: 70vw; /* Limit max width */
+    background-color: azure;
+    margin: auto;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+.items li {
+    list-style-type: none;
+}
+
+.imgg {
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+
+.imgg:hover {
+    transform: scale(1.1);
+    box-shadow: rgba(220, 7, 7, 0.56) 0px 22px 70px 4px;
+}
+
+.left_box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.left_box h2 {
+    font-size: 1.5rem;
+}
+
+.rightbox {
+    position: relative;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+
+.rightbox .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+    border-radius: 25%;
+}
+
+.rightbox:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+.rightbox:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <div class="navbar">
+            <nav>
+                <ul id="navvlist">
+                    <li><p id="navlogo">Barix Ka Dhaba</p></li>
+                    <li id="navitems">
+                        <div class="links">
+                            <a href="#">Home</a>
+                            <a href="#">About</a>
+                            <a href="#">Contact</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="containerbox">
+            <section class="itemssection">
+                <div class="items">
+                    <div class="left_box">
+                        <h2>Golden Apple</h2>
+                        <h2>Ingredients</h2>
+                        <ul>
+                            <li>Apple</li>
+                            <li>Gold Ingot</li>
+                            <li>Crafting Table</li>
+                        </ul>
+                        <h2>Process</h2>
+                        <p>Follow The Below Steps</p>
+                        <img src="aaa.png" alt="" class="imgg">
+                    </div>
+                    <div class="rightbox">
+                        <img src="image.png" alt="" width="300px" height="300px" class="imggg">
+                        <div class="overlay"><span>Click me to buy</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="itemssection">
+                <div class="items">
+                    <div class="left_box">
+                        <h2>Cookie</h2>
+                        <h2>Ingredients</h2>
+                        <ul>
+                            <li>Wheat</li>
+                            <li>Choco chips</li>
+                            <li>Crafting Table</li>
+                        </ul>
+                        <h2>Process</h2>
+                        <p>Follow The Below Steps</p>
+                        <img src="Screenshot 2024-07-04 133232.png" alt="" class="imgg" width="250" height="138">
+                    </div>
+                    <div class="rightbox">
+                        <img src="Cookie.webp" alt="" width="300px" height="300px" class="imggg">
+                        <div class="overlay"><span>Click me to buy</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="itemssection">
+                <div class="items">
+                    <div class="left_box">
+                        <h2>Cake</h2>
+                        <h2>Ingredients</h2>
+                        <ul>
+                            <li>Sugar</li>
+                            <li>Egg and Milk</li>
+                            <li>Wheat</li>
+                        </ul>
+                        <h2>Process</h2>
+                        <p>Follow The Below Steps</p>
+                        <img src="Screenshot 2024-07-04 133303.png" alt="" class="imgg" width="250" height="138">
+                    </div>
+                    <div class="rightbox">
+                        <img src="Cake.webp" alt="" width="300px" height="300px" class="imggg">
+                        <div class="overlay"><span>Click me to buy</span></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+       
+    </main>
+
+    <footer>
+        <div class="footer">
+            <p>Copy Right &#169; Barix ka DhaBha All Rights Reserver pvt led 2023.</p>
+        </div>
+    </footer>
+
+</div>
+
+</body>
+</html>
